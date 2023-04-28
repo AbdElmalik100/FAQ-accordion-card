@@ -1,0 +1,202 @@
+/* Global Rules */
+* {
+    box-sizing: border-box;
+}
+:root {
+    /* Primary Text Colors */
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
+
+    /* Second Text Colors */
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+
+    /* Background Gradient Colors */
+    --Soft-violet: hsl(273, 75%, 66%);
+    --Soft-blue: hsl(240, 73%, 65%);
+
+    /* Dividers Colors */
+    --Light-grayish-blue: hsl(240, 5%, 91%);
+}
+body {
+    Font-size: 12px;
+    font-family: 'Kumbh Sans', sans-serif;
+    height: 100vh;
+    background-image: linear-gradient(to top, var(--Soft-blue), var(--Soft-violet));
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+}
+
+/* Grid System */
+@media (min-width: 576px) { /* Small Devices => Landscape Phones */
+    .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px) { /* Medium Devices => Tablets */
+    .container {
+        max-width: 720px;
+    }
+}
+@media (min-width: 992px) { /* Desktops */
+    .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) { /* Large Screens */
+    .container {
+        max-width: 1140px;
+    }
+}
+.container > img {
+    position: absolute;
+    top: 56%;
+    transform: translateY(-50%);
+    z-index: 1;
+    left: -10px;
+}
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    min-height: 460px;
+}
+.card .imgs {
+    flex-basis: 50%;
+    position: relative;
+}
+.card .imgs .first {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+.card .imgs img:nth-child(2) {
+    position: absolute;
+    top: 56%;
+    transform: translateY(-50%);
+    left: -25%;
+}
+.card .imgs .first img:nth-child(1) {
+    position: absolute;
+    top: 34%;
+    width: 200%;
+    transform: translateY(-50%);
+    left: -115%;
+}
+.card .imgs .first img:nth-child(2) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    left: -70px;
+}
+.card .faq {
+    flex-basis: 60%;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0 40px;
+    justify-content: flex-start;
+}
+.card .faq h1 {
+    font-size: 30px;
+    color: var(--Very-dark-desaturated-blue);
+}
+.card .faq .info {
+    width: 90%;
+    padding: 5px;
+    height: 55px;
+    border-bottom: 1px solid var(--Light-grayish-blue);
+    transition: 0.3s;
+}
+.card .faq .info.height {
+    height: 100px;
+}
+.card .faq .info h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--Dark-grayish-blue);
+    transition: 0.5s;
+    cursor: pointer;
+}
+.card .faq .info h3:hover {
+    color: var(--Very-dark-desaturated-blue);
+}
+.card .faq .info h3 img {
+    transition: 0.5s;
+}
+.card .faq .info h3 img.rot {
+    transform: rotate(180deg);
+}
+.card .faq .info p {
+    color: var(--Dark-grayish-blue);
+    line-height: 1.4;
+    opacity: 0;
+    transition: 0.3s;
+    position: relative;
+    top: -35px;
+    z-index: -1;
+}
+.card .faq .info p.open {
+    opacity: 1;
+    top: 0px;
+}
+
+@media (max-width: 992px) {
+    .card .faq {
+        width: 750px;
+    }
+}
+/* @media (max-width: 767px) {
+    .card .faq {
+        width: 700px;
+    }
+} */
+@media (max-width: 767px) {
+    .card {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card .faq {
+        width: 370px;
+        padding: 0px 20px 30px;
+        align-items: center;
+    }
+    .card .faq .info {
+        width: auto;
+    }
+    .card .imgs {
+        width: 100%;
+        height: 110px;
+    }
+    .card .imgs .first {
+        height: 115px;
+        overflow: visible;
+    }
+    .card .imgs .first img:nth-child(1) {
+        top: -134%;
+        width: 70%;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+    .card .imgs .first img:nth-child(2) {
+        top: -105%;
+        transform: translateX(-50%);
+        width: 70%;
+        left: 50%;
+    }
+    .card .imgs img:nth-child(2) {
+        top: -40px;
+        transform: translateX(-50%);
+        left: 30%;
+        width: 29%;
+    }
+}
